@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Function Demo</title>
+  <script>
+    function hello() {
+      document.write("Hello<br>");
+      document.write("************* Welcome to Hello() function ***********<br>");
+    }
+
+    function sum(one, two) {
+      return one + two;
+    }
+
+    function sum_all() {
+      let sum = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+      }
+      return sum;
+    }
+
+    hello();
+    let total = sum(8, 10);
+    document.write("Sum of 8 & 10 = " + total + "<br>");
+    document.write("Sum of 10 + 20 = " + sum(10, 20) + "<br>");
+    document.write("Sum of the given series is: " + sum_all(10, 20, 40, 50, 70));
+  </script>
+</head>
+<body>
+</body>
+</html>
