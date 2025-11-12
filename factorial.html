@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input id="n" type="number" placeholder="Number">
+  <button onclick="f()">Go</button>
+  <p id="r"></p>
+
+  <script>
+    function f() {
+      let n = +document.getElementById("n").value, x = 1;
+      for (let i = 1; i <= n; i++) x *= i;
+      document.getElementById("r").textContent = x;
+    }
+  </script>
+</body>
+</html>
