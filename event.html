@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handler Example</title>
+</head>
+<body>
+  <h2 id="message">Click the button!</h2>
+  <button onclick="changeText()">Click Me</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("message").innerText = "Button was clicked!";
+    }
+  </script>
+</body>
+</html>
