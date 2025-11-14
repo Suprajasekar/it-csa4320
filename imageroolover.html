@@ -1,0 +1,24 @@
+<html> 
+<head> 
+<title> Image rollover </title> 
+<Script language="JavaScript"> 
+var high=new  image(200,200); 
+var low= new  image(200,200); 
+high.src="c:\water.jpg"; 
+low.src="c:\sample.jpg" 
+function chhigh(n) 
+{ 
+Document.images[n].src="c:\water.jpg"; 
+} 
+Function chlow(n) 
+{ 
+Document.images[n].src="c:\sample.jpg"; 
+} 
+</Script> 
+<body> 
+<A HREF="" onclick="returnfalse" onmouseover="chhigh(0)" 
+onmouseout="chlow(0)"> </A> 
+<Img Src="c:\sample.jpg"> 
+</head> 
+</body> 
+</html>
