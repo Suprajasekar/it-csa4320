@@ -1,0 +1,24 @@
+import java.net.*;
+
+class S {
+    public static void main(String[] a) throws Exception {
+        byte[] b = new byte[1024];
+        DatagramSocket s = new DatagramSocket(a.length == 1 ? 998 : 99);
+
+        if (a.length == 1) { // server
+            int p = 0, c;
+            while ((c = System.in.read()) != -1) {
+                if (c == '\n') {
+                    s.send(new DatagramPacket(b, p, InetAddress.getLocalHost(), 99));
+                    p = 0;
+                } else if (c != '\r') b[p++] = (byte) c;
+            }
+        } else { // client
+            while (true) {
+                DatagramPacket p = new DatagramPacket(b, b.length);
+                s.receive(p);
+                System.out.println(new String(p.getData(), 0, p.getLength()));
+            }
+        }
+    }
+}
