@@ -1,0 +1,18 @@
+import java.io.*;
+import java.net.*;
+
+class TCP {
+    public static void main(String[] a) throws Exception {
+        if (a.length > 0 && a[0].equals("server")) {
+            ServerSocket ss = new ServerSocket(5000);
+            Socket s = ss.accept();
+            System.out.println("Client: " + new BufferedReader(
+            new InputStreamReader(s.getInputStream())).readLine());
+            ss.close();
+        } else { 
+            Socket s = new Socket("localhost", 5000);
+            new PrintWriter(s.getOutputStream(), true).println("Hello Server!");
+            s.close();
+        }
+    }
+}
